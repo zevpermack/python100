@@ -10,12 +10,19 @@ word_len = len(chosen_word)
 correct_guesses = []
 for index in range(word_len):
   correct_guesses += "_"
+print(correct_guesses)
 
-while '_' in correct_guesses:
+game_over = False
+
+while not game_over:
   guess = input("Guess a letter: ").lower()
   for index in range(0, word_len):
     if guess == chosen_word[index]:
       correct_guesses[index] = guess
+  print(correct_guesses)
+  if '_' not in correct_guesses:
+    game_over = True
+    
 
 print('you win')
 
