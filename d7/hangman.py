@@ -1,10 +1,9 @@
 import random
-from gameInfo import stages
-from gameInfo import word_list
+from gameInfo import stages, word_list
 
 lives = 6
+prev_guesses = {}
 chosen_word = word_list[random.randint(0,len(word_list) - 1)]
-print(f"chosen word for test: {chosen_word}")
 word_len = len(chosen_word)
 
 correct_guesses = []
@@ -16,11 +15,16 @@ game_over = False
 
 while not game_over:
   guess = input("Guess a letter: ").lower()
+  if prev_guesses.get(guess):
+    print(f"You already guessed {guess}")
+  else:
+    prev_guesses[guess] = True
   for index in range(0, word_len):
     if guess == chosen_word[index]:
       correct_guesses[index] = guess
   print(correct_guesses)
   if guess not in correct_guesses:
+    print(f"{guess} is not in the word")
     lives -= 1
     print(f"- - - - - \n {lives} lives left")
     print(f"{stages[lives]}")
