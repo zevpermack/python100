@@ -1,4 +1,5 @@
 import random
+import os
 from gameInfo import stages, word_list
 
 lives = 6
@@ -15,6 +16,7 @@ game_over = False
 
 while not game_over:
   guess = input("Guess a letter: ").lower()
+  os.system('cls' if os.name == 'nt' else 'clear')
   if prev_guesses.get(guess):
     print(f"You already guessed {guess}")
   else:
