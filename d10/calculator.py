@@ -10,15 +10,6 @@ def multiply(n1, n2):
 def divide(n1, n2):
   return n1 / n2
 
-operations = {
-  "+" : add,
-  "-" : subtract,
-  "*" : multiply,
-  "/" : divide
-}
-
-num1 = int(input("What's the first number?: "))
-
 def get_operator():
   for operation in operations:
     print(operation)
@@ -33,19 +24,28 @@ def finish_equation():
   num2 = get_second_number()
   return symbol, num2
 
-symbol, num2 = finish_equation()
-
 def calculate(symbol, num1, num2):
   return operations[symbol](num1, num2)
-
-curr_result = calculate(symbol, num1, num2)
-print(curr_result)
 
 def continue_calculating(previous_result): 
   user_answer = input(f"Would you like to continue calculating on your previous result {previous_result}? 'y' for yes. 'n' for no: ")
   if user_answer == "y":
     return True
   return False
+
+operations = {
+  "+" : add,
+  "-" : subtract,
+  "*" : multiply,
+  "/" : divide
+}
+
+num1 = int(input("What's the first number?: "))
+
+symbol, num2 = finish_equation()
+
+curr_result = calculate(symbol, num1, num2)
+print(curr_result)
 
 switch = continue_calculating(curr_result)
 while switch:
