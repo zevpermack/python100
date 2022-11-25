@@ -17,7 +17,7 @@ def get_operator():
   return input("Pick an operation symbol from the list above: ")
 
 def get_second_number():
-  return int(input("What's the second number?: "))
+  return float(input("What's the second number?: "))
 
 def finish_equation():
   symbol = get_operator()
@@ -40,7 +40,7 @@ operations = {
   "/" : divide
 }
 
-num1 = int(input("What's the first number?: "))
+num1 = float(input("What's the first number?: "))
 
 symbol, num2 = finish_equation()
 
