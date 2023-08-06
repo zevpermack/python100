@@ -23,8 +23,9 @@ def random_walk(distance):
         z.color(random_color())
         z.forward(50)
 
+    screen = turtle.Screen()
+    screen.exitonclick()
 
-random_walk(100)
 
-screen = turtle.Screen()
-screen.turtle.exitonclick()
+if __name__ == "__main__":
+    random_walk(100)
