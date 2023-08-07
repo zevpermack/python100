@@ -3,7 +3,7 @@ import turtle
 from random_walk import random_color
 
 z = turtle.Turtle()
-z.speed(10)
+z.speed("fastest")
 
 
 def make_spirograph():
