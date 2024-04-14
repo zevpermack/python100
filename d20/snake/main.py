@@ -5,12 +5,12 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
 
-turtles = [Turtle("square") for _ in range(3)]
-turtle_position = [0, 0]
+segments = [Turtle("square") for _ in range(3)]
+segment_position = [0, 0]
 
-for turtle in turtles:
-    turtle.goto(tuple(turtle_position))
-    turtle.color("white")
-    turtle_position[0] -= 20
+for segment in segments:
+  segment.goto(tuple(segment_position))
+  segment.color("white")
+  segment_position[0] -= 20
 
 screen.exitonclick()
